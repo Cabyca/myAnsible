@@ -1,0 +1,13 @@
+# На какой группе серверов
+- hosts: webservers
+
+  tasks:
+    - name: install git
+      # apt-get update && apt-get install git
+      ansible.builtin.apt: # имя модуля Ansible
+        name: git
+        state: present
+        update_cache: yes
+#      become_user: admin
+      become: yes
+#      become_user: admin
