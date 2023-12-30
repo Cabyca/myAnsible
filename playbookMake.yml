@@ -1,0 +1,16 @@
+# На какой группе серверов
+- hosts: webservers
+
+  tasks:
+
+    - name: Update apt cache
+      # apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+      become: yes
+
+    - name: Install Node.js
+      ansible.builtin.apt:
+        name:  make
+        state: present
+      become: yes
